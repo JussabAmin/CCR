@@ -1,0 +1,7 @@
+# Ativa o módulo de reescrita
+RewriteEngine On
+
+# Redireciona a URL sem o .php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

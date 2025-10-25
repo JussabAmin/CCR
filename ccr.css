@@ -1,0 +1,168 @@
+/* Estilos básicos do corpo da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Cinza claro */
+    color: #343a40; /* Cinza escuro para o texto */
+}
+
+/* Container do wrapper, usado em formulários de login/cadastro */
+.wrapper {
+    max-width: 420px;
+    padding: 30px;
+    margin: 50px auto;
+    border: 1px solid #dee2e6; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: #ffffff; /* Fundo branco */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+}
+
+/* Ajustes em formulários */
+.form-group {
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #007bff; /* Azul padrão do Bootstrap */
+    font-weight: 600; /* Mais negrito */
+}
+
+/* Estilos de botões */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.alert {
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+p {
+    text-align: center;
+    font-size: 17px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- ESTILOS DO MENU SLICED (FATIAS) --- */
+.sliced-menu {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.sliced-menu ul {
+    list-style: none; /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Alinha os itens na horizontal */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sliced-menu li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.sliced-menu a {
+    text-decoration: none;
+    color: #495057;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    display: block;
+    position: relative;
+    overflow: hidden; /* Oculta as fatias antes da animação */
+    transition: color 0.3s ease;
+}
+
+/* Pseudo-elementos (as "fatias") */
+.sliced-menu a::before,
+.sliced-menu a::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    transition: transform 0.4s ease;
+}
+
+.sliced-menu a::before {
+    left: 0;
+    transform: translateX(-100%);
+}
+
+.sliced-menu a::after {
+    right: 0;
+    transform: translateX(100%);
+}
+
+/* Efeito ao passar o mouse */
+.sliced-menu a:hover {
+    color: #000;
+}
+
+.sliced-menu a:hover::before,
+.sliced-menu a:hover::after {
+    transform: translateX(0); /* Anima as fatias para o centro */
+}
+
+/* Cores de fundo por tipo de link */
+.sliced-menu li:nth-child(1) a:hover::before,
+.sliced-menu li:nth-child(1) a:hover::after {
+    background-color: rgba(108, 117, 125, 0.2);
+}
+
+.sliced-menu li:nth-child(2) a:hover::before,
+.sliced-menu li:nth-child(2) a:hover::after {
+    background-color: rgba(52, 58, 64, 0.2);
+}
+
+.sliced-menu li:nth-child(3) a:hover::before,
+.sliced-menu li:nth-child(3) a:hover::after {
+    background-color: rgba(0, 123, 255, 0.4);
+}
+
+.sliced-menu li:nth-child(4) a:hover::before,
+.sliced-menu li:nth-child(4) a:hover::after {
+    background-color: rgba(40, 167, 69, 0.4);
+}
+
+.sliced-menu li:nth-child(5) a:hover::before,
+.sliced-menu li:nth-child(5) a:hover::after {
+    background-color: rgba(220, 53, 69, 0.4);
+}
+/* Exemplo de media query para telas pequenas */
+@media (max-width: 576px) {
+    .card-text.fs-2 {
+        font-size: 1.5rem !important;
+    }
+    .sliced-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sliced-menu li {
+        margin: 5px 0;
+    }
+}
